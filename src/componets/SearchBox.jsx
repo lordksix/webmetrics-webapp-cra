@@ -1,6 +1,8 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { fetchPlace } from 'lib/fetchMapboxAPI';
 import { useState } from 'react';
+import { RxEnter } from 'react-icons/rx';
+import 'styles/SearchBox.css';
 
 const SearchBox = () => {
   const [city, setCity] = useState('');
@@ -26,7 +28,7 @@ const SearchBox = () => {
       <div className="placesAutocomplete">
         <div className="placesAutocomplete__inputWrap">
           <label htmlFor="city" className="label">
-            Your city
+            City:
             {autocompleteErr && (
               <span className="inputError">{autocompleteErr}</span>
             )}
@@ -41,6 +43,7 @@ const SearchBox = () => {
             required
             pattern={autocompleteCities.join('|')}
             autoComplete="off"
+            className="searchBar-input"
           />
           <datalist id="places">
             {autocompleteCities.map((city) => (
@@ -50,8 +53,10 @@ const SearchBox = () => {
           <span className="placesAutocomplete__hint">
             *start typing and choose your city from the given options
           </span>
-          <button type="submit">Submit</button>
         </div>
+        <button type="submit" className="flex-align">
+          <RxEnter />
+        </button>
       </div>
     </form>
   );
