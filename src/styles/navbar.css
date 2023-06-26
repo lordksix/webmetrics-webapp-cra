@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.logo-title-box {
+  width: 75%;
+  align-items: center;
+  gap: 10px;
+  margin-left: 4%;
+}
+
+div.logo-title-box h1 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+div.logo-title-box img {
+  width: 10%;
+}
+
+div.btn-box {
+  position: absolute;
+  top: 12px;
+  right: 5%;
+}
+
+div.btn-box button {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+}
+
+ul.nav-list {
+  display: none;
+  flex-direction: column;
+  list-style: none;
+  gap: 10px;
+  width: 100%;
+  height: 50vh;
+  margin-top: 20px;
+}
+
+ul.nav-list li {
+  width: 100%;
+  text-align: left;
+}
+
+ul.nav-list li a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.active {
+  border-bottom: 1px solid #007bff;
+}
+
+@media only screen and (min-width: 768px) {
+  nav {
+    width: 90%;
+  }
+
+  div.logo-title-box {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 2%;
+  }
+
+  div.logo-title-box img {
+    width: 10%;
+  }
+
+  div.btn-box {
+    display: none;
+  }
+
+  ul.nav-list {
+    display: flex;
+    flex-direction: row;
+    height: 20px;
+    list-style: none;
+    width: 45%;
+    align-items: center;
+    margin-top: 5px;
+  }
+
+  ul.nav-list li {
+    width: 33%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+
+  ul.nav-list li:last-child {
+    border-left: 2px solid rgba(0, 0, 0, 0.5);
+    height: 20px;
+  }
+
+  ul.nav-list li a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  ul.nav-list {
+    width: 30%;
+  }
+
+  ul.nav-list li {
+    width: 33%;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  ul.nav-list {
+    width: 20%;
+  }
+
+  ul.nav-list li {
+    width: 33%;
+    text-align: center;
+  }
+}
