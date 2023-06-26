@@ -1,0 +1,58 @@
+.flex-align {
+  background: white;
+  border: 1px solid #3a0775;
+  color: #3a0775;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  padding: 8px 16px;
+  margin-top: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.flex-align:hover {
+  background: #3a0775;
+  color: white;
+  cursor: pointer;
+}
+
+.placesAutocomplete {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.placesAutocomplete__inputWrap {
+  padding: 8px;
+}
+
+.placesAutocomplete__hint {
+  display: inline-block;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+label.label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.searchBar-input {
+  border: 1px solid #3a0775;
+  border-radius: 0;
+  box-sizing: border-box;
+  display: block;
+  height: 42px;
+  padding: 8px;
+  width: 300px;
+  color: #3a0775;
+}
+
+.inputError {
+  background: #ff00002e;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 14px;
+  margin-left: 4px;
+  padding: 8px;
+}
