@@ -1,8 +1,13 @@
+import SearchBox from 'componets/SearchBox';
+
 const Home = () => {
   const home = 'Home';
 
   return (
-    <div>{home}</div>
+    <div>
+      {home}
+      <SearchBox />
+    </div>
   );
 };
 

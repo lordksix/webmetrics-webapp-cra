@@ -14,7 +14,7 @@ const fetchDataJSON = async (URL, authObj = false, signal = undefined) => {
   };
   const response = await fetch(URL, fetchOptions);
   if (!response.ok) {
-    const errorMessage = await response.statusText();
+    const errorMessage = await response.text();
     throw new Error(errorMessage);
   }
   const dataJSON = await response.json();
