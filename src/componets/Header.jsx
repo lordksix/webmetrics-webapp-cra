@@ -3,11 +3,12 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import logo from 'images/lordksix-logos_transparent.png';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import SearchBox from './SearchBox';
+import 'styles/Header.css';
 
 const links = [
-  { path: 'current', text: 'Current' },
-  { path: 'forecast', text: 'Forecast' },
-  { path: 'Historical', text: 'Historical' },
+  { path: '/current', text: 'Current' },
+  { path: '/forecast', text: 'Forecast' },
+  { path: '/historical', text: 'Historical' },
   { path: '/', text: 'Home' },
 ];
 
@@ -48,7 +49,7 @@ const Header = () => {
             width: 'auto',
           }}
         />
-        <h1 className="h1">Air Quality App</h1>
+        <h1 className="h1">Air Quality</h1>
       </div>
       {mobileBtn}
       <div className="full-header">
