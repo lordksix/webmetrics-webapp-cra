@@ -1,16 +1,19 @@
-import { Route, Routes } from 'react-router-dom';
-import './App.css';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import 'styles/App.css';
 import Home from 'routes/Home';
 import NotMatch from 'routes/NotMatch';
 import CurrentAirPollution from 'routes/CurrentAirPollution';
 import ForecastAirPollution from 'routes/ForecastAirPollution';
 import HistoricalAirPollution from 'routes/HistoricalAirPollution';
 import Layout from 'componets/Layout';
+import MenuModal from 'componets/MenuModal';
 
 function App() {
+  const location = useLocation();
+  const previousLocation = location.state?.previousLocation;
   return (
     <div className="App">
-      <Routes>
+      <Routes location={previousLocation || location}>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="current" element={<CurrentAirPollution />} />
@@ -19,6 +22,12 @@ function App() {
           <Route path="*" element={<NotMatch />} />
         </Route>
       </Routes>
+
+      {previousLocation && (
+        <Routes>
+          <Route path="/modal" element={<MenuModal />} />
+        </Routes>
+      )}
     </div>
   );
 }
