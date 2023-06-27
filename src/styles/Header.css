@@ -41,10 +41,27 @@
   border-bottom: 1px solid #007bff;
 }
 
+.locationBtn {
+  background: aquamarine;
+  border: none;
+  color: #3a0775;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease;
+}
+
+.locationBtn:hover {
+  background: #3a0775;
+  color: aquamarine;
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 768px) {
   .stickyHeader {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
   }
 
   .stickyHeader .navbarBtn {
@@ -97,8 +114,8 @@
 @media only screen and (min-width: 1024px) {
   .stickyHeader {
     justify-content: space-between;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     gap: 30px;
   }
 

@@ -4,6 +4,7 @@ import logo from 'images/lordksix-logos_transparent.png';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import SearchBox from './SearchBox';
 import 'styles/Header.css';
+import LocationBtn from './LocationBtn';
 
 const links = [
   { path: '/current', text: 'Current' },
@@ -54,6 +55,7 @@ const Header = () => {
       {mobileBtn}
       <div className="full-header">
         <SearchBox />
+        <LocationBtn />
         <nav aria-label="main">
           <ul className="full-navbar">
             {navbar}

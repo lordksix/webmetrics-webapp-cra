@@ -2,10 +2,11 @@ import { nanoid } from '@reduxjs/toolkit';
 import { useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-import { GiExitDoor } from 'react-icons/gi';
+import { GiCancel } from 'react-icons/gi';
 import logo from 'images/lordksix-logos_transparent.png';
 import SearchBox from './SearchBox';
 import 'styles/MenuModal.css';
+import LocationBtn from './LocationBtn';
 
 const MenuModal = () => {
   const modalRef = useRef();
@@ -50,7 +51,7 @@ const MenuModal = () => {
       className="navbarBtn"
     >
       <button type="button" className="flex-align">
-        <GiExitDoor />
+        <GiCancel />
       </button>
     </Link>
   );
@@ -73,6 +74,7 @@ const MenuModal = () => {
         </div>
         <div className="modalBody">
           <SearchBox />
+          <LocationBtn />
           <nav aria-label="mobile" className="modalNavbar">
             <ul>
               {navbar}
