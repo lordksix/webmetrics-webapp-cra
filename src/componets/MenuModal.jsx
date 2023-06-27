@@ -1,10 +1,11 @@
 import { nanoid } from '@reduxjs/toolkit';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { selectAirData } from 'features/AirPollution/airDataSlice';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { GiCancel } from 'react-icons/gi';
+import { FaSearchLocation } from 'react-icons/fa';
 import logo from 'images/lordksix-logos_transparent.png';
 import SearchBox from './SearchBox';
 import 'styles/MenuModal.css';
@@ -14,6 +15,7 @@ const MenuModal = () => {
   const modalRef = useRef();
   const location = useLocation();
   const airData = useSelector(selectAirData);
+  const [searchLoc, setSearchLoc] = useState(false);
 
   useEffect(() => {
     const observerRefValue = modalRef.current;
@@ -48,6 +50,13 @@ const MenuModal = () => {
     ))
   );
 
+  const searchBtn = (
+    <button type="button" onClick={() => setSearchLoc(true)} className="locationBtn">
+      Search City:&nbsp;
+      <FaSearchLocation />
+    </button>
+  );
+
   const mobileBtn = (
     <Link
       to={location?.state?.previousLocation?.pathname || '/'}
@@ -80,8 +89,10 @@ const MenuModal = () => {
           {mobileBtn}
         </div>
         <div className="modalBody">
-          <SearchBox />
-          <LocationBtn />
+          <div className="searchSec">
+            {searchLoc ? <SearchBox handleSearchBtn={setSearchLoc} /> : searchBtn}
+            <LocationBtn />
+          </div>
           <nav aria-label="mobile" className="modalNavbar">
             <ul>
               {navbar}

@@ -1,12 +1,14 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { addLocation, getAirData } from 'features/AirPollution/airDataSlice';
+import PropTypes from 'prop-types';
 import { fetchPlace } from 'lib/fetchMapboxAPI';
 import { useState } from 'react';
 import { RxEnter } from 'react-icons/rx';
 import { useDispatch } from 'react-redux';
 import 'styles/SearchBox.css';
 
-const SearchBox = () => {
+const SearchBox = (props) => {
+  const { handleSearchBtn } = props;
   const [city, setCity] = useState('');
   const [autocompleteCities, setAutocompleteCities] = useState([]);
   const [autocompleteErr, setAutocompleteErr] = useState('');
@@ -38,6 +40,7 @@ const SearchBox = () => {
     const cityObj = autocompleteCities.filter((tempcity) => tempcity.name === city)[0];
     dispatch(addLocation(cityObj));
     dispatch(getAirData(cityObj.center));
+    handleSearchBtn(false);
   };
 
   return (
@@ -77,6 +80,10 @@ const SearchBox = () => {
       </div>
     </form>
   );
+};
+
+SearchBox.propTypes = {
+  handleSearchBtn: PropTypes.func.isRequired,
 };
 
 export default SearchBox;
