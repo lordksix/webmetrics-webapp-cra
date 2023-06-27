@@ -1,9 +1,15 @@
+import { addLocation, getAirData } from 'features/AirPollution/airDataSlice';
 import { fetchPlace } from 'lib/fetchMapboxAPI';
+import { useState } from 'react';
 import { FaLocationArrow } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
 
 const LocationBtn = () => {
+  const dispatch = useDispatch();
+  const [currentLocationErr, setCurrentLocationErr] = useState(false);
+
   const currentLocError = () => {
-    console.error('Unable to retrieve your location');
+    setCurrentLocationErr(true);
   };
 
   const currentLocSucess = async (pos) => {
@@ -13,16 +19,22 @@ const LocationBtn = () => {
       name: res.features[0].place_name,
       center: res.features[0].center,
     };
+    dispatch(addLocation(city));
     console.log(city);
+    dispatch(getAirData(city.center));
   };
 
   const handleLocation = () => {
     if (navigator.geolocation) {
+      setCurrentLocationErr(false);
       navigator.geolocation.getCurrentPosition(currentLocSucess, currentLocError);
     } else {
-      console.error('Geolocation not supported');
+      setCurrentLocationErr(true);
     }
   };
+  const errorSpan = (
+    <span style={{ color: 'red' }}>Unable to retrieve your location</span>
+  );
   const locationBtn = (
     <button
       type="button"
@@ -31,6 +43,7 @@ const LocationBtn = () => {
     >
       Current Location:&nbsp;
       <FaLocationArrow />
+      {currentLocationErr && errorSpan}
     </button>
   );
   return (
