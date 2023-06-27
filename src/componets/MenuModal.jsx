@@ -1,6 +1,8 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import { selectAirData } from 'features/AirPollution/airDataSlice';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { GiCancel } from 'react-icons/gi';
 import logo from 'images/lordksix-logos_transparent.png';
@@ -11,11 +13,11 @@ import LocationBtn from './LocationBtn';
 const MenuModal = () => {
   const modalRef = useRef();
   const location = useLocation();
+  const airData = useSelector(selectAirData);
 
   useEffect(() => {
     const observerRefValue = modalRef.current;
     disableBodyScroll(observerRefValue);
-
     return () => {
       if (observerRefValue) {
         enableBodyScroll(observerRefValue);
@@ -45,6 +47,7 @@ const MenuModal = () => {
       </li>
     ))
   );
+
   const mobileBtn = (
     <Link
       to={location?.state?.previousLocation?.pathname || '/'}
@@ -55,6 +58,10 @@ const MenuModal = () => {
       </button>
     </Link>
   );
+
+  const loadMessage = <span>Loading</span>;
+  const errorMessage = <span className="error">Error</span>;
+
   return (
     <section className="modalMenuWrapper" ref={modalRef}>
       <div className="modalMenu">
@@ -80,6 +87,10 @@ const MenuModal = () => {
               {navbar}
             </ul>
           </nav>
+          <div className={`modalMsg${airData.isLoading || airData.error ? ' modalMsgActiv' : ''}`}>
+            {airData.isLoading && loadMessage}
+            {airData.error && errorMessage}
+          </div>
         </div>
       </div>
     </section>

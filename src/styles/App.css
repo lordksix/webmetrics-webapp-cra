@@ -11,6 +11,10 @@
   text-align: left;
 }
 
+.error {
+  color: red;
+}
+
 @media only  screen and (min-width: 600px) {
   .profilePage {
     display: grid;

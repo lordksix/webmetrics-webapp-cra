@@ -1,13 +1,16 @@
 import { nanoid } from '@reduxjs/toolkit';
+import { addLocation, getAirData } from 'features/AirPollution/airDataSlice';
 import { fetchPlace } from 'lib/fetchMapboxAPI';
 import { useState } from 'react';
 import { RxEnter } from 'react-icons/rx';
+import { useDispatch } from 'react-redux';
 import 'styles/SearchBox.css';
 
 const SearchBox = () => {
   const [city, setCity] = useState('');
   const [autocompleteCities, setAutocompleteCities] = useState([]);
   const [autocompleteErr, setAutocompleteErr] = useState('');
+  const dispatch = useDispatch();
   const idInput = nanoid();
   const idLabel = nanoid();
 
@@ -32,8 +35,10 @@ const SearchBox = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const temp = autocompleteCities.filter((tempcity) => tempcity.name === city);
-    console.log(temp);
+    const cityObj = autocompleteCities.filter((tempcity) => tempcity.name === city)[0];
+    console.log(cityObj);
+    dispatch(addLocation(cityObj));
+    dispatch(getAirData(cityObj.center));
   };
 
   return (
