@@ -20,7 +20,6 @@ const LocationBtn = () => {
       center: res.features[0].center,
     };
     dispatch(addLocation(city));
-    console.log(city);
     dispatch(getAirData(city.center));
   };
 

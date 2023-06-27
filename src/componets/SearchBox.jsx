@@ -36,7 +36,6 @@ const SearchBox = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const cityObj = autocompleteCities.filter((tempcity) => tempcity.name === city)[0];
-    console.log(cityObj);
     dispatch(addLocation(cityObj));
     dispatch(getAirData(cityObj.center));
   };
