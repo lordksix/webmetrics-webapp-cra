@@ -1,0 +1,155 @@
+:root {
+  --header-sm: 54px;
+  --header-md: 27px;
+  --header-lg: 48px;
+}
+
+.modalMenuWrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.904);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modalMenu {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+}
+
+.modalMenu form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 85vw;
+  max-width: 270px;
+  margin: 0 auto;
+  padding: 15px 0;
+  background-color: aquamarine;
+}
+
+.sqAnchor {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10%;
+  background-color: aquamarine;
+  max-width: 800px;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.modalTitle .headerLogo img {
+  display: none;
+}
+
+.modalTitle .flex-align {
+  background: aquamarine;
+  border: none;
+  color: #3a0775;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  padding: 8px 12px;
+  margin-top: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.modalMenuWrapper .placesAutocomplete .flex-align {
+  margin-top: 28px;
+}
+
+.modalTitle .flex-align:hover {
+  background: #3a0775;
+  color: aquamarine;
+  cursor: pointer;
+}
+
+.modalMenu .placesAutocomplete__inputWrap {
+  flex-flow: column;
+}
+
+.modalMenu .searchBar-input {
+  width: 100px;
+}
+
+.modalMenu .placesAutocomplete__hint {
+  display: none;
+}
+
+.modalBody {
+  display: flex;
+  flex-flow: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.modalNavbar ul {
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+}
+
+.modalNavbar li a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.sqMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  min-width: 120px;
+  background-color: aquamarine;
+}
+
+@media only screen and (min-width: 294px) {
+  .modalTitle .headerLogo img {
+    display: inline-block;
+  }
+
+  .modalNavbar ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 70vw;
+    max-width: 800px;
+    column-gap: 20px;
+    row-gap: 20px;
+    place-items: center;
+    justify-content: center;
+  }
+
+  .sqMenu {
+    align-self: stretch;
+    justify-self: stretch;
+    max-width: 200px;
+    padding: 0;
+    height: 25vw;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .sqMenu {
+    max-width: none;
+    height: 15vw;
+  }
+}
