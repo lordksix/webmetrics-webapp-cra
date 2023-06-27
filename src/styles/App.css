@@ -1,0 +1,33 @@
+:root {
+  --bg-containerSelf: aquamarine;
+  --bg-container: #4369b2;
+  --font-colorSelf: #007bff;
+  --font-color: white;
+  --font-purpleSelf: #3a0775;
+}
+
+.App {
+  text-align: center;
+}
+
+.profileCol {
+  margin: auto;
+  width: 80%;
+}
+
+.left {
+  text-align: left;
+}
+
+.error {
+  color: red;
+}
+
+@media only  screen and (min-width: 600px) {
+  .profilePage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 800px;
+    justify-content: center;
+  }
+}
