@@ -2,9 +2,9 @@ const Home = () => {
   const home = 'Home';
 
   return (
-    <div>
+    <main className="appBody">
       {home}
-    </div>
+    </main>
   );
 };
 

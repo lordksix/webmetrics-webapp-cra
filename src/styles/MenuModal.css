@@ -97,7 +97,6 @@
   display: flex;
   flex-flow: column;
   gap: 15px;
-  width: 100%;
 }
 
 .modalMenu .placesAutocomplete__hint {
@@ -111,8 +110,8 @@
   align-items: center;
   position: absolute;
   left: 0;
-  top: 60px;
-  height: calc(100vh - 60px);
+  top: 68px;
+  height: calc(100vh - 68px);
   width: 100%;
   padding-top: 20px;
 }
@@ -200,6 +199,7 @@
 
   .searchSec .locationBtn {
     width: auto;
+    height: 50px;
   }
 }
 
@@ -219,7 +219,7 @@
     justify-content: center;
     gap: 20px;
     position: relative;
-    left: 18px;
+    align-items: center;
   }
 
   .searchSec .locationBtn {

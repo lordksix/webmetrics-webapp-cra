@@ -2,9 +2,8 @@
   text-align: center;
 }
 
-.profileCol {
-  margin: auto;
-  width: 80%;
+.appBody {
+  height: calc(100vh - var(--bodyheight));
 }
 
 .left {
