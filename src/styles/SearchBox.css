@@ -1,18 +1,17 @@
 .flex-align {
-  background: white;
-  border: 1px solid #3a0775;
-  color: #3a0775;
+  background: var(--bg-container);
+  border: none;
+  color: var(--font-color);
   display: flex;
   align-items: center;
   font-size: 16px;
-  padding: 8px 16px;
+  padding: 8px 12px;
   margin-top: 8px;
   transition: background-color 0.3s ease;
 }
 
 .flex-align:hover {
   background: #3a0775;
-  color: white;
   cursor: pointer;
 }
 

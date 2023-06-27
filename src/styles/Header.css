@@ -5,9 +5,9 @@
   padding-bottom: 10px;
   padding-left: 9%;
   padding-right: 9%;
-  gap: 30px;
+  gap: 10px;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
-  background-color: aquamarine;
+  background-color: var(--bg-container);
 }
 
 .headerLogo {
@@ -18,13 +18,18 @@
 
 .h1 {
   font-size: 1.25rem;
-  color: #007bff;
+  color: var(--font-color);
+}
+
+.headerLogo img {
+  display: none;
 }
 
 .navbarBtn {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--font-color);
 }
 
 .full-header {
@@ -33,35 +38,45 @@
 
 .full-navbar li a {
   text-decoration: none;
-  color: #007bff;
+  color: var(--font-color);
   font-weight: bold;
 }
 
 .active {
-  border-bottom: 1px solid #007bff;
+  border-bottom: 1px solid var(--font-color);
 }
 
 .locationBtn {
-  background: aquamarine;
+  background: var(--bg-container);
   border: none;
-  color: #3a0775;
+  color: var(--font-color);
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 12px;
-  padding: 8px 12px;
-  transition: background-color 0.3s ease;
+  padding: 8px 8px;
+  transition: text-decoration 0.3s ease;
 }
 
 .locationBtn:hover {
-  background: #3a0775;
-  color: aquamarine;
+  text-decoration: underline;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 294px) {
+  .headerLogo img {
+    display: inline-block;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   .stickyHeader {
-    padding-left: 2.5%;
-    padding-right: 2.5%;
+    padding-left: 3.5%;
+    padding-right: 3.5%;
+  }
+
+  .headerLogo .toggleImg {
+    display: none;
   }
 
   .stickyHeader .navbarBtn {
@@ -71,7 +86,7 @@
   .full-header {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
   }
 
   header .placesAutocomplete__hint {
@@ -80,7 +95,7 @@
 
   header .flex-align {
     font-size: 12px;
-    padding: 6px 12px;
+    padding: 6px 6px;
     margin-top: 0;
     transition: background-color 0.3s ease;
   }
@@ -88,7 +103,12 @@
   header .searchBar-input {
     height: 32px;
     padding: 6px;
-    width: 100px;
+    min-width: 100px;
+    width: 12.5vw;
+  }
+
+  header .label {
+    color: var(--font-color);
   }
 
   .full-navbar {
@@ -106,8 +126,14 @@
 
   ul.nav-list li a {
     text-decoration: none;
-    color: #007bff;
+    color: var(--font-color);
     font-size: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  .headerLogo .toggleImg {
+    display: inline-block;
   }
 }
 
@@ -130,6 +156,12 @@
   .full-navbar li:last-child {
     padding-left: 10px;
   }
+
+  header .searchBar-input {
+    height: 32px;
+    padding: 6px;
+    width: 12.5vw;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
@@ -143,5 +175,9 @@
 
   .full-navbar li:last-child {
     padding-left: 15px;
+  }
+
+  header .searchBar-input {
+    width: 14vw;
   }
 }
