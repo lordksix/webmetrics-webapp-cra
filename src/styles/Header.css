@@ -8,6 +8,7 @@
   gap: 10px;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
   background-color: var(--bg-container);
+  height: 68px;
 }
 
 .headerLogo {
@@ -30,6 +31,10 @@
   align-items: center;
   justify-content: center;
   color: var(--font-color);
+}
+
+.headerLogo + .flex-align {
+  margin-top: 0;
 }
 
 .full-header {

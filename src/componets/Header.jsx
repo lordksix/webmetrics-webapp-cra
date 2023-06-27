@@ -23,7 +23,7 @@ const Header = () => {
     <Link
       to="/modal"
       state={{ previousLocation: location }}
-      className="navbarBtn"
+      className="flex-align"
     >
       <GiHamburgerMenu />
     </Link>
