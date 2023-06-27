@@ -8,6 +8,8 @@ const SearchBox = () => {
   const [city, setCity] = useState('');
   const [autocompleteCities, setAutocompleteCities] = useState([]);
   const [autocompleteErr, setAutocompleteErr] = useState('');
+  const idInput = nanoid();
+  const idLabel = nanoid();
 
   const handleCityChange = async (e) => {
     setCity(e.target.value);
@@ -16,38 +18,49 @@ const SearchBox = () => {
     const res = await fetchPlace(city);
 
     if (!autocompleteCities.includes(e.target.value)) {
-      if (res.features) setAutocompleteCities(res.features.map((place) => place.place_name));
+      if (res.features) {
+        setAutocompleteCities(res.features.map((place) => ({
+          name: place.place_name,
+          center: place.center,
+        })));
+      }
     }
 
     if (res.error) setAutocompleteErr(res.error);
     else setAutocompleteErr('');
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const temp = autocompleteCities.filter((tempcity) => tempcity.name === city);
+    console.log(temp);
+  };
+
   return (
-    <form>
+    <form onSubmit={(e) => handleSubmit(e)}>
       <div className="placesAutocomplete">
         <div className="placesAutocomplete__inputWrap">
-          <label htmlFor="city" className="label">
+          <label htmlFor={idLabel} className="label">
             City:
             {autocompleteErr && (
               <span className="inputError">{autocompleteErr}</span>
             )}
           </label>
           <input
-            list="places"
+            list={idInput}
             type="text"
-            id="city"
+            id={idLabel}
             name="city"
             onChange={handleCityChange}
             value={city}
             required
-            pattern={autocompleteCities.join('|')}
+            pattern={autocompleteCities.map((city) => `(${city.name})`).join('|')}
             autoComplete="off"
             className="searchBar-input"
           />
-          <datalist id="places">
+          <datalist id={idInput}>
             {autocompleteCities.map((city) => (
-              <option key={nanoid()}>{city}</option>
+              <option key={nanoid()}>{city.name}</option>
             ))}
           </datalist>
           <span className="placesAutocomplete__hint">
