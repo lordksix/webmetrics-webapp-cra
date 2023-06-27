@@ -23,18 +23,21 @@
 }
 
 .placesAutocomplete__inputWrap {
+  align-items: center;
+  display: flex;
   padding: 8px;
+  gap: 10px;
+  color: #3a0775;
+}
+
+.label {
+  font-weight: bold;
 }
 
 .placesAutocomplete__hint {
   display: inline-block;
   font-size: 12px;
   margin-top: 4px;
-}
-
-label.label {
-  display: block;
-  margin-bottom: 8px;
 }
 
 .searchBar-input {
