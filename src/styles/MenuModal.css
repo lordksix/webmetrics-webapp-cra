@@ -14,14 +14,13 @@
   display: flex;
   flex-flow: column;
   justify-content: center;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
 }
 
 .modalMenu {
   display: flex;
   flex-flow: column;
   gap: 20px;
+  width: 100%;
 }
 
 .modalMenu form {
@@ -30,9 +29,9 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  width: 85vw;
-  max-width: 270px;
+  width: 100%;
   margin: 0 auto;
+  max-width: 250px;
   padding: 10px 0;
   background-color: var(--bg-container);
 }
@@ -51,8 +50,7 @@
   align-items: center;
   padding: 0 9%;
   background-color: var(--bg-container);
-  width: 100vw;
-  margin: 0 auto;
+  width: 100%;
   position: absolute;
   left: 0;
   top: 0;
@@ -98,7 +96,8 @@
 .searchSec {
   display: flex;
   flex-flow: column;
-  gap: 10px;
+  gap: 15px;
+  width: 100%;
 }
 
 .modalMenu .placesAutocomplete__hint {
@@ -114,7 +113,7 @@
   left: 0;
   top: 60px;
   height: calc(100vh - 60px);
-  width: 100vw;
+  width: 100%;
   padding-top: 20px;
 }
 
@@ -122,6 +121,7 @@
   display: flex;
   flex-flow: column;
   gap: 15px;
+  width: 100%;
 }
 
 .modalNavbar li a {
@@ -134,15 +134,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 20px;
+  padding: 20px 0;
+  width: 100%;
   min-width: 120px;
   background-color: var(--bg-container);
 }
 
+.searchSec .locationBtn {
+  width: 100%;
+}
+
 .modalMsg {
-  width: 100px;
-  height: 25px;
+  width: 100vw;
+  height: 40px;
   text-align: center;
+}
+
+.modalNavbar {
+  width: 100%;
 }
 
 .modalMsgActiv {
@@ -158,6 +167,12 @@
     gap: 15px;
   }
 
+  .modalMenu form {
+    gap: 10px;
+    width: 85vw;
+    max-width: 294px;
+  }
+
   .modalNavbar ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -167,11 +182,13 @@
     row-gap: 20px;
     place-items: center;
     justify-content: center;
+    margin: 0 auto;
   }
 
   .sqMenu {
     align-self: stretch;
     justify-self: stretch;
+    width: auto;
     max-width: none;
     padding: 0;
     height: 20vw;
@@ -179,6 +196,10 @@
 
   .modalBody .flex-align {
     display: flex;
+  }
+
+  .searchSec .locationBtn {
+    width: auto;
   }
 }
 

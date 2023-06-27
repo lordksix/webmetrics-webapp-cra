@@ -1,11 +1,3 @@
-:root {
-  --bg-containerSelf: aquamarine;
-  --bg-container: #4369b2;
-  --font-colorSelf: #007bff;
-  --font-color: white;
-  --font-purpleSelf: #3a0775;
-}
-
 .App {
   text-align: center;
 }

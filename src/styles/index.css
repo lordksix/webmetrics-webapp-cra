@@ -1,3 +1,11 @@
+:root {
+  --bg-containerSelf: aquamarine;
+  --bg-container: #4369b2;
+  --font-colorSelf: #007bff;
+  --font-color: white;
+  --font-purpleSelf: #3a0775;
+}
+
 body {
   margin: 0;
   font-family:
@@ -14,6 +22,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+  color: var(--font-color);
 }
 
 code {

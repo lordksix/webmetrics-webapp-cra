@@ -9,6 +9,7 @@
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
   background-color: var(--bg-container);
   height: 68px;
+  width: 100%;
 }
 
 .headerLogo {
