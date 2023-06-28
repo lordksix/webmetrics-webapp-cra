@@ -25,9 +25,9 @@
   gap: 10px;
   width: 100%;
   margin: 0 auto;
-  max-width: 250px;
   padding: 10px 0;
-  background-color: var(--bg-container);
+  background-color: var(--bg-container-green);
+  height: 20vh;
 }
 
 .sqAnchor {
@@ -74,6 +74,14 @@
   margin-top: 28px;
 }
 
+.modalMenu .placesAutocomplete {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .modalTitle .flex-align:hover {
   background: #3a0775;
   cursor: pointer;
@@ -90,7 +98,20 @@
 .searchSec {
   display: flex;
   flex-flow: column;
-  gap: 15px;
+  width: 100vw;
+}
+
+.searchSec .locationBtn {
+  width: 100%;
+  height: 10vh;
+}
+
+.searchSec .locationBtn:nth-child(1) {
+  background-color: var(--bg-container-green);
+}
+
+.searchSec .locationBtn:nth-child(2) {
+  background-color: var(--bg-container-green-light);
 }
 
 .modalMenu .placesAutocomplete__hint {
@@ -113,7 +134,6 @@
 .modalNavbar ul {
   display: flex;
   flex-flow: column;
-  gap: 15px;
   width: 100%;
 }
 
@@ -128,19 +148,31 @@
   justify-content: center;
   align-items: center;
   padding: 20px 0;
+  height: 10vh;
   width: 100%;
   min-width: 120px;
   background-color: var(--bg-container);
 }
 
-.searchSec .locationBtn {
-  width: 100%;
+.sqMenu:nth-child(1) {
+  background-color: var(--bg-container-orange);
+}
+
+.sqMenu:nth-child(2) {
+  background-color: var(--bg-container-pink);
+}
+
+.sqMenu:nth-child(3) {
+  background-color: var(--bg-container-light);
 }
 
 .modalMsg {
   width: 100vw;
   height: 40px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modalNavbar {
@@ -148,7 +180,7 @@
 }
 
 .modalMsgActiv {
-  background-color: var(--bg-container);
+  background-color: var(--bg-container-green-light);
 }
 
 @media only screen and (min-width: 294px) {
@@ -156,23 +188,13 @@
     display: inline-block;
   }
 
-  .searchSec {
-    gap: 15px;
-  }
-
-  .modalMenu form {
-    gap: 10px;
-    width: 85vw;
-    max-width: 294px;
-  }
-
   .modalNavbar ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 70vw;
+    width: 80vw;
     max-width: 800px;
-    column-gap: 20px;
-    row-gap: 20px;
+    column-gap: 0;
+    row-gap: 0;
     place-items: center;
     justify-content: center;
     margin: 0 auto;
@@ -191,33 +213,49 @@
     display: flex;
   }
 
+  .searchSec {
+    width: 80vw;
+  }
+
   .searchSec .locationBtn {
     width: auto;
-    height: 50px;
+    height: 15vh;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .sqMenu {
-    max-height: 130px;
-    height: 15vw;
+    height: 20vh;
   }
 
   .modalMenu form {
     gap: 20px;
-    padding: 15px 0;
+    align-self: stretch;
+    justify-self: stretch;
+    width: 100%;
   }
 
   .searchSec {
-    flex-flow: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
-    gap: 20px;
+    gap: 0;
     position: relative;
     align-items: center;
+    width: 80vw;
+    max-width: 800px;
+    height: 20vh;
   }
 
   .searchSec .locationBtn {
     font-size: 16px;
-    padding: 24px 24px;
+    height: 100%;
+  }
+
+  .modalMsg {
+    width: 80vw;
+    height: 40px;
+    text-align: center;
+    max-width: 800px;
   }
 }

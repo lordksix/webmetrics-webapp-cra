@@ -4,20 +4,20 @@ import SearchBox from 'componets/CommomComponents/SearchBox';
 import { selectAirData } from 'features/AirPollution/airDataSlice';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import logoAir from 'images/pollution.png';
 
 import 'styles/HomeBody.css';
 
 const HomeBody = () => {
   const airData = useSelector(selectAirData);
   const loadMessage = <span>Loading</span>;
-  const errorMessage = <span className="error">Error</span>;
+  const errorMessage = <span className="error">Error retrieving data</span>;
   const currLocation = (
     <span>
       Information about:&nbsp;
       {airData?.locationData?.name || ''}
     </span>
   );
-  console.log(airData.current);
   const links = [
     { path: '/current', text: 'Current Air Quality' },
     { path: '/forecast', text: 'Forecast Air Quality' },
@@ -28,35 +28,55 @@ const HomeBody = () => {
     links.map((link, i) => {
       if (i === 0) {
         return (
-          <li key={nanoid()} className="catItem">
+          <div key={nanoid()} className="catItem">
             <NavLink
               to={link.path}
               className={({ isActive }) => (isActive ? 'active' : undefined)}
             >
-              <p>{link.text}</p>
-              <p>
-                Air Quality Index:&nbsp;
-                {airData?.current[0]?.main?.aqi || ''}
-              </p>
-              <p>
-                Click for more information
-              </p>
+              <img
+                src={logoAir}
+                alt="Air Icon"
+                style={{
+                  height: '90px',
+                  width: 'auto',
+                }}
+              />
+              <div>
+                <p>{link.text}</p>
+                <p>
+                  Air Quality Index:&nbsp;
+                  {airData?.current[0]?.main?.aqi || ''}
+                </p>
+                <p>
+                  Click for more information
+                </p>
+              </div>
             </NavLink>
-          </li>
+          </div>
         );
       }
       return (
-        <li key={nanoid()} className="catItem">
+        <div key={nanoid()} className="catItem">
           <NavLink
             to={link.path}
             className={({ isActive }) => (isActive ? 'active' : undefined)}
           >
-            <p>{link.text}</p>
-            <p>
-              Click for more information
-            </p>
+            <img
+              src={logoAir}
+              alt="Air Icon"
+              style={{
+                height: '90px',
+                width: 'auto',
+              }}
+            />
+            <div>
+              <p>{link.text}</p>
+              <p>
+                Click for more information
+              </p>
+            </div>
           </NavLink>
-        </li>
+        </div>
       );
     })
   );
@@ -72,9 +92,7 @@ const HomeBody = () => {
           {!airData.error && !airData.isLoading && currLocation}
         </div>
       </div>
-      <ul className="listCat">
-        {navbar}
-      </ul>
+      {navbar}
     </div>
   );
 };

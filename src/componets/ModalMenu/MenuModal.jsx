@@ -70,6 +70,12 @@ const MenuModal = () => {
 
   const loadMessage = <span>Loading</span>;
   const errorMessage = <span className="error">Error</span>;
+  const currLocation = (
+    <span>
+      Information about:&nbsp;
+      {airData?.locationData?.name || ''}
+    </span>
+  );
 
   return (
     <section className="modalMenuWrapper" ref={modalRef}>
@@ -98,9 +104,10 @@ const MenuModal = () => {
               {navbar}
             </ul>
           </nav>
-          <div className={`modalMsg${airData.isLoading || airData.error ? ' modalMsgActiv' : ''}`}>
+          <div className={`modalMsg${airData.isLoading || airData.error || (!airData.isLoading && !airData.error && airData.current.length > 0) ? ' modalMsgActiv' : ''}`}>
             {airData.isLoading && loadMessage}
             {airData.error && errorMessage}
+            {!airData.error && !airData.isLoading && airData.current.length > 0 && currLocation}
           </div>
         </div>
       </div>
