@@ -1,26 +1,38 @@
 :root {
   --bg-containerSelf: aquamarine;
   --bg-container: #4369b2;
+  --bg-container-green: #00b64f;
+  --bg-container-green-light: #6bc900;
+  --bg-container-orange: #ff5b2e;
+  --bg-container-pink: #e42a72;
+  --bg-container-light: #5789e6;
   --font-colorSelf: #007bff;
   --font-color: white;
   --font-purpleSelf: #3a0775;
   --bodyheight: 68px;
 }
 
+@font-face {
+  font-family: 'GillSans';
+  src:
+    local('GillSans'),
+    url('fonts/GillSans.otf') format('otf'),
+    url('fonts/GillSansBold.otf') format('otf'),
+    url('fonts/GillSansBoldItalic.otf') format('otf'),
+    url('fonts/GillSansCondensed.otf') format('otf'),
+    url('fonts/GillSansCondensedBold.otf') format('otf'),
+    url('fonts/GillSansHeavy.otf') format('otf'),
+    url('fonts/GillSansHeavyItalic.otf') format('otf'),
+    url('fonts/GillSansItalic.otf') format('otf'),
+    url('fonts/GillSansLight.otf') format('otf'),
+    url('fonts/GillSansLightItalic.otf') format('otf'),
+    url('fonts/GillSansMedium.otf') format('otf'),
+    url('fonts/GillSansMediumItalic.otf') format('otf');
+}
+
 body {
   margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
+  font-family: GillSans, 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
