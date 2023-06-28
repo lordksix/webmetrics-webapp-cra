@@ -7,6 +7,7 @@ import { NavLink } from 'react-router-dom';
 import logoAir from 'images/pollution.png';
 
 import 'styles/HomeBody.css';
+import qualityMsg from 'lib/aqiString';
 
 const HomeBody = () => {
   const airData = useSelector(selectAirData);
@@ -45,7 +46,7 @@ const HomeBody = () => {
                 <p>{link.text}</p>
                 <p>
                   Air Quality Index:&nbsp;
-                  {airData?.current[0]?.main?.aqi || ''}
+                  {qualityMsg(airData?.current[0]?.main?.aqi)}
                 </p>
                 <p>
                   Click for more information
