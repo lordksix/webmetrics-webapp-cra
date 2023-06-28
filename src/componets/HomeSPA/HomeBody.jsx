@@ -8,16 +8,23 @@ import logoAir from 'images/pollution.png';
 
 import 'styles/HomeBody.css';
 import qualityMsg from 'lib/aqiString';
+import dataString from 'lib/dtSting';
 
 const HomeBody = () => {
   const airData = useSelector(selectAirData);
   const loadMessage = <span>Loading</span>;
   const errorMessage = <span className="error">Error retrieving data</span>;
   const currLocation = (
-    <span>
+    <p>
       Information about:&nbsp;
       {airData?.locationData?.name || ''}
-    </span>
+    </p>
+  );
+  const currRefresh = (
+    <p className="lastestData">
+      Latest refresh:&nbsp;
+      {dataString(airData?.current[0]?.dt || -1)}
+    </p>
   );
   const links = [
     { path: '/current', text: 'Current Air Quality' },
@@ -25,7 +32,7 @@ const HomeBody = () => {
     { path: '/historical', text: 'Historical Air Quality' },
   ];
 
-  const navbar = (
+  const navdiv = (
     links.map((link, i) => {
       if (i === 0) {
         return (
@@ -91,9 +98,10 @@ const HomeBody = () => {
           {airData.isLoading && loadMessage}
           {airData.error && errorMessage}
           {!airData.error && !airData.isLoading && currLocation}
+          {!airData.error && !airData.isLoading && currRefresh}
         </div>
       </div>
-      {navbar}
+      {navdiv}
     </div>
   );
 };
