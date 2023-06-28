@@ -2,6 +2,7 @@ import AirQuality from 'componets/CommomComponents/AirQuality';
 import DataComponent from 'componets/CommomComponents/DataComponent';
 import LocationComp from 'componets/CommomComponents/LocationComp';
 import { selectAirData } from 'features/AirPollution/airDataSlice';
+import dataString from 'lib/dtSting';
 import { useSelector } from 'react-redux';
 
 const CurrentTitle = () => {
@@ -24,7 +25,10 @@ const CurrentTitle = () => {
     <>
       <div>
         <AirQuality aqi={aqi} />
-        <LocationComp location={airData?.locationData?.name || 'No location'} />
+        <LocationComp
+          location={airData?.locationData?.name || 'No location'}
+          dateLocale={dataString(airData?.current[0]?.dt || -1)}
+        />
       </div>
       <div>
         <p>
