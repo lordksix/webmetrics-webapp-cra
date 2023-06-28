@@ -1,0 +1,94 @@
+.HomeSec {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 5px;
+  padding-top: 20px;
+}
+
+.HomeSec > * {
+  width: 98%;
+  min-height: 90px;
+  background-color: var(--bg-container);
+}
+
+.HomeSec .locationBtn {
+  font-size: 16px;
+}
+
+.locationSec {
+  display: flex;
+  width: 98%;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.HomeSec form .flex-align {
+  display: none;
+}
+
+.searchSec .placesAutocomplete .flex-align {
+  margin-top: 28px;
+}
+
+.HomeSec .flex-align:hover {
+  background: #3a0775;
+  cursor: pointer;
+}
+
+.HomeSec .searchBar-input,
+.HomeSec .placesAutocomplete__hint {
+  width: 75%;
+}
+
+.HomeSec .placesAutocomplete__inputWrap {
+  gap: 5px;
+}
+
+.statusMsg {
+  height: 21px;
+}
+
+@media only screen and (min-width: 294px) {
+  .searchSec {
+    gap: 15px;
+  }
+
+  .searchSec form {
+    gap: 10px;
+    width: 85vw;
+    max-width: 294px;
+  }
+
+  .searchSec .locationBtn {
+    width: auto;
+    height: 50px;
+  }
+
+  .HomeSec form .flex-align {
+    display: flex;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .searchSec form {
+    gap: 20px;
+    padding: 15px 0;
+  }
+
+  .searchSec {
+    flex-flow: row;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    align-items: center;
+  }
+
+  .searchSec .locationBtn {
+    font-size: 16px;
+    padding: 24px 24px;
+  }
+}
