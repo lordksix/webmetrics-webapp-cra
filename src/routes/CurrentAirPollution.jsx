@@ -1,10 +1,9 @@
-import React from 'react';
+import CurrentTitle from 'componets/CurrentSPA/CurrentTitle';
 
-const CurrentAirPollution = () => {
-  const data = 'data';
-  return (
-    <div>{data}</div>
-  );
-};
+const CurrentAirPollution = () => (
+  <>
+    <CurrentTitle />
+  </>
+);
 
 export default CurrentAirPollution;
