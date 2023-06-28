@@ -1,3 +1,8 @@
+form {
+  background: var(--bg-container);
+  color: var(--font-color);
+}
+
 .flex-align {
   background: var(--bg-container);
   border: none;
@@ -24,9 +29,10 @@
 .placesAutocomplete__inputWrap {
   align-items: center;
   display: flex;
+  flex-flow: column;
   padding: 8px;
   gap: 10px;
-  color: #3a0775;
+  color: var(--font-color);
 }
 
 .label {

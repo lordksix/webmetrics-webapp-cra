@@ -99,6 +99,10 @@
     display: none;
   }
 
+  header .placesAutocomplete__inputWrap {
+    flex-flow: row;
+  }
+
   header .flex-align {
     font-size: 12px;
     padding: 6px 6px;

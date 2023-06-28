@@ -1,9 +1,3 @@
-:root {
-  --header-sm: 54px;
-  --header-md: 27px;
-  --header-lg: 48px;
-}
-
 .modalMenuWrapper {
   position: fixed;
   left: 0;

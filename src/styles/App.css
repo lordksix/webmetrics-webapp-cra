@@ -3,7 +3,12 @@
 }
 
 .appBody {
-  height: calc(100vh - var(--bodyheight));
+  min-height: calc(100vh - var(--bodyheight));
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 68px;
+  padding-top: 20px;
 }
 
 .left {
@@ -14,11 +19,8 @@
   color: red;
 }
 
-@media only  screen and (min-width: 600px) {
-  .profilePage {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    max-width: 800px;
-    justify-content: center;
+@media only  screen and (min-width: 768px) {
+  .appBody {
+    padding-top: 30px;
   }
 }
