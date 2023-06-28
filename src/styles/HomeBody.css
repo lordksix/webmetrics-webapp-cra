@@ -5,7 +5,8 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  padding-top: 20px;
+  padding-top: 2vh;
+  font-size: 12px;
 }
 
 .locationSec {
@@ -15,36 +16,44 @@
   justify-content: center;
 }
 
-.listCat {
-  width: 98%;
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  margin: 0 auto;
-}
-
 .HomeSec form,
-.HomeSec .locationSec {
+.HomeSec .locationSec,
+.catItem {
   width: 98%;
-  min-height: 90px;
-  background-color: var(--bg-container);
+  height: 15vh;
+  min-height: 120px;
   text-decoration: none;
   margin: 0 auto;
 }
 
+.HomeSec form {
+  background-color: var(--bg-container-green);
+}
+
+.HomeSec .locationSec {
+  background-color: var(--bg-container-green-light);
+}
+
 .catItem {
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  min-height: 90px;
-  background-color: var(--bg-container);
+  height: 15vh;
   align-self: stretch;
   justify-self: stretch;
+}
+
+.catItem:nth-child(3) {
+  background-color: var(--bg-container-orange);
+}
+
+.catItem:nth-child(4) {
+  background-color: var(--bg-container-pink);
+}
+
+.catItem:nth-child(5) {
+  background-color: var(--bg-container-light);
 }
 
 .catItem a {
@@ -52,10 +61,10 @@
   width: 100%;
   height: 100%;
   display: flex;
-  flex-flow: column;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  gap: 5vw;
 }
 
 .catItem span {
@@ -69,14 +78,23 @@
 
 .HomeSec .locationBtn {
   font-size: 16px;
+  background-color: var(--bg-container-green-light);
 }
 
 .HomeSec form .flex-align {
   display: none;
 }
 
-.searchSec .placesAutocomplete .flex-align {
-  margin-top: 28px;
+.HomeSec .placesAutocomplete {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.HomeSec .placesAutocomplete .flex-align {
+  margin-top: -13px;
+  margin-left: -40px;
+  font-size: 20px;
 }
 
 .HomeSec .locationBtn:hover {
@@ -89,6 +107,10 @@
   width: 75%;
 }
 
+.HomeSec .placesAutocomplete__hint {
+  display: none;
+}
+
 .HomeSec .placesAutocomplete__inputWrap {
   gap: 5px;
 }
@@ -98,43 +120,46 @@
 }
 
 @media only screen and (min-width: 294px) {
-  .searchSec {
-    gap: 15px;
+  .HomeSec {
+    font-size: 16px;
   }
 
-  .searchSec form {
-    gap: 10px;
-    width: 85vw;
-    max-width: 294px;
-  }
-
-  .searchSec .locationBtn {
-    width: auto;
-    height: 50px;
+  .HomeSec .placesAutocomplete__hint {
+    display: inline;
   }
 
   .HomeSec form .flex-align {
     display: flex;
-    margin-top: 0;
+    background-color: var(--bg-container-green);
+  }
+
+  .HomeSec form .flex-align:hover {
+    background-color: #3a0775;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .searchSec form {
-    gap: 20px;
-    padding: 15px 0;
+  .HomeSec {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    column-gap: 0;
+    padding-top: 2vh;
+    row-gap: 0;
+    margin: 0 auto;
   }
 
-  .searchSec {
-    flex-flow: row;
-    justify-content: center;
-    gap: 20px;
-    position: relative;
-    align-items: center;
+  .HomeSec form,
+  .HomeSec .locationSec,
+  .catItem {
+    width: 100%;
+    height: 25vh;
   }
+}
 
-  .searchSec .locationBtn {
-    font-size: 16px;
-    padding: 24px 24px;
+@media only screen and (min-width: 1024px) {
+  .HomeSec {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 }
