@@ -5,8 +5,8 @@ import NotMatch from 'routes/NotMatch';
 import CurrentAirPollution from 'routes/CurrentAirPollution';
 import ForecastAirPollution from 'routes/ForecastAirPollution';
 import HistoricalAirPollution from 'routes/HistoricalAirPollution';
-import Layout from 'componets/Layout';
-import MenuModal from 'componets/MenuModal';
+import Layout from 'componets/CommomComponents/Layout';
+import MenuModal from 'componets/ModalMenu/MenuModal';
 
 function App() {
   const location = useLocation();
