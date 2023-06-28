@@ -115,10 +115,6 @@
   gap: 5px;
 }
 
-.statusMsg {
-  height: 21px;
-}
-
 @media only screen and (min-width: 294px) {
   .HomeSec {
     font-size: 16px;
