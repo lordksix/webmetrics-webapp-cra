@@ -24,7 +24,7 @@ const DataComponent = (props) => {
 
 DataComponent.propTypes = {
   dataName: PropTypes.string.isRequired,
-  dataInfo: PropTypes.string.isRequired,
+  dataInfo: PropTypes.number.isRequired,
 };
 
 export default DataComponent;
