@@ -10,8 +10,7 @@ import dataString from 'lib/dtSting';
 
 const RelativeAQModal = () => {
   const location = useLocation();
-  console.log(location);
-  const { airData } = location?.state;
+  const { airData } = location?.state || '';
   const { aqi, title, nameLocale } = airData?.main || { aqi: -1 };
   const {
     co, no, no2, o3,

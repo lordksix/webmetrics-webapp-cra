@@ -42,7 +42,7 @@ const ForecastBody = () => {
       </div>
       <div className="sepSec">
         <p>
-          FORECAST AIR QUALITY NEXT 8 HOURS
+          FORECAST AIR QUALITY: NEXT 8 HOURS
         </p>
       </div>
       <div className="forecastBody">
