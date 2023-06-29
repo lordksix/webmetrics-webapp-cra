@@ -3,11 +3,18 @@
   left: 0;
   top: 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: black;
   display: flex;
   flex-flow: column;
   justify-content: center;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.modalMenuWrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .modalMenu {
@@ -173,6 +180,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .modalNavbar {
@@ -219,7 +229,7 @@
 
   .searchSec .locationBtn {
     width: auto;
-    height: 15vh;
+    height: 13vh;
   }
 }
 
@@ -253,9 +263,7 @@
   }
 
   .modalMsg {
-    width: 80vw;
     height: 40px;
     text-align: center;
-    max-width: 800px;
   }
 }
