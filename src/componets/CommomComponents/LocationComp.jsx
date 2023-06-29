@@ -6,7 +6,10 @@ const LocationComp = (props) => {
   return (
     <div className="locationWrapper">
       <p>{location}</p>
-      <p>{dateLocale}</p>
+      <p>
+        Date time:&nbsp;
+        {dateLocale}
+      </p>
     </div>
   );
 };
