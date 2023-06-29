@@ -3,13 +3,14 @@
   justify-content: space-between;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 9%;
-  padding-right: 9%;
+  padding-left: 3%;
+  padding-right: 3%;
   gap: 10px;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
   background-color: var(--bg-container);
   height: 68px;
   width: 100%;
+  text-align: center;
 }
 
 .headerLogo {

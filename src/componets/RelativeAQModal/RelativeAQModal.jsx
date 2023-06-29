@@ -1,17 +1,17 @@
 import { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { FaChevronLeft } from 'react-icons/fa';
+import { FaChevronLeft, FaHome } from 'react-icons/fa';
 import LocationComp from 'componets/CommomComponents/LocationComp';
 import AirQuality from 'componets/CommomComponents/AirQuality';
 import DataComponent from 'componets/CommomComponents/DataComponent';
 import dataString from 'lib/dtSting';
+import 'styles/RelativeModal.css';
 
 const RelativeAQModal = () => {
   const location = useLocation();
-  const { airData } = location?.state || '';
-  const { aqi, title, nameLocale } = airData?.main || { aqi: -1 };
+  const { airData, title, nameLocale } = location?.state || '';
+  const { aqi } = airData?.main || { aqi: -1 };
   const {
     co, no, no2, o3,
     so2, pm10, nh3,
@@ -38,13 +38,12 @@ const RelativeAQModal = () => {
     };
   }, []);
 
-  const burgerBtn = (
+  const homeBtn = (
     <Link
-      to="/modal"
-      state={{ previousLocation: location }}
+      to="/"
       className="flex-align navbarBtn"
     >
-      <GiHamburgerMenu />
+      <FaHome />
     </Link>
   );
 
@@ -64,25 +63,25 @@ const RelativeAQModal = () => {
       <div className="forecastModal">
         <div className="forecastModalTitle">
           {returnBtn}
-          <span>
+          <div className="formodalTitle">
             {title}
-            &nbsp;Air Quality
-          </span>
-          {burgerBtn}
+            &nbsp;air quality
+          </div>
+          {homeBtn}
         </div>
-        <div>
+        <div className="secTitle">
           <AirQuality aqi={aqi} />
           <LocationComp
             location={nameLocale}
             dateLocale={dt}
           />
         </div>
-        <div>
+        <div className="sepSec">
           <p>
             Pollutant Concentration in microgram/m3
           </p>
         </div>
-        <div>
+        <div className="secBody">
           <DataComponent dataName="CO" dataInfo={co} />
           <DataComponent dataName="NO" dataInfo={no} />
           <DataComponent dataName="NO2" dataInfo={no2} />

@@ -1,0 +1,77 @@
+.forecastModalWrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  min-height: 100vh;
+  font-size: 10px;
+  background-color: black;
+  color: var(--font-color);
+  display: flex;
+  flex-flow: column;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.forecastModalWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.forecastModal {
+  width: 100vw;
+  min-height: 100vh;
+  color: var(--font-color);
+  display: flex;
+  flex-flow: column;
+  position: relative;
+}
+
+.forecastModalTitle {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 9%;
+  gap: 10px;
+  background-color: var(--bg-container);
+  height: 68px;
+  width: 100%;
+}
+
+.formodalTitle {
+  margin: auto;
+}
+
+.forecastModal .secTitle .airQlyWrapper,
+.forecastModal .secTitle .locationWrapper {
+  height: 15vh;
+}
+
+.forecastModal .secBody {
+  grid-template-columns: 1fr;
+}
+
+.forecastModal .secBody .dataWrapper {
+  height: 8.75vh;
+  flex-flow: row;
+  padding: 0 10vw;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 294px) {
+  .forecastModalWrapper {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 520px) {
+  .forecastModalWrapper {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .forecastModalWrapper {
+    font-size: 16px;
+  }
+}
