@@ -1,9 +1,9 @@
-import CurrentTitle from 'componets/CurrentSPA/CurrentTitle';
+import CurrentBody from 'componets/CurrentSPA/CurrentBody';
 
 const CurrentAirPollution = () => (
-  <>
-    <CurrentTitle />
-  </>
+  <main className="appBody">
+    <CurrentBody />
+  </main>
 );
 
 export default CurrentAirPollution;

@@ -5,7 +5,7 @@ const DataComponent = (props) => {
   const result = dataInfo < 0 ? 'No data' : dataInfo;
 
   return (
-    <div className="locationWrapper">
+    <div className="dataWrapper">
       <p className="dataTitle">{dataName}</p>
       <p className="dataInfo">{result}</p>
     </div>

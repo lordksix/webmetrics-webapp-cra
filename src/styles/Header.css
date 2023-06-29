@@ -48,6 +48,10 @@
   font-weight: bold;
 }
 
+.full-navbar li a:hover {
+  color: var(--font-purpleSelf);
+}
+
 .active {
   border-bottom: 1px solid var(--font-color);
 }
@@ -132,12 +136,6 @@
   .full-navbar li:last-child {
     padding-left: 5px;
     border-left: 2px solid rgba(0, 0, 0, 0.5);
-  }
-
-  ul.nav-list li a {
-    text-decoration: none;
-    color: var(--font-color);
-    font-size: 0.8rem;
   }
 }
 

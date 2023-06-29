@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.App:-webkit-scrollbar {
+  display: none;
 }
 
 .appBody {
@@ -8,11 +14,10 @@
   position: absolute;
   left: 0;
   top: 68px;
-  padding-top: 2vh;
 }
 
-.left {
-  text-align: left;
+.appBody h2 {
+  margin-top: 2vh;
 }
 
 .error {
@@ -20,7 +25,7 @@
 }
 
 @media only  screen and (min-width: 768px) {
-  .appBody {
-    padding-top: 30px;
+  .appBody h2 {
+    margin-top: 3vh;
   }
 }
