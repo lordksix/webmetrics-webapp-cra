@@ -17,12 +17,11 @@ const ForecastBody = () => {
   const links = eightHours.map((element) => (
     <Link
       key={nanoid()}
-      to="/relativemodal"
+      to="/relativemodal/forecast"
       state={{
         previousLocation: location,
         airData: element,
         nameLocale: airData?.locationData?.name || 'No location',
-        title: 'Forecast',
       }}
     >
       <DataObjComponent

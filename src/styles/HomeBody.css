@@ -57,6 +57,10 @@
   background-color: var(--bg-container-light);
 }
 
+.catItem:nth-child(6) {
+  background-color: var(--bg-container-darkest);
+}
+
 .catItem a {
   color: var(--font-color);
   width: 100%;

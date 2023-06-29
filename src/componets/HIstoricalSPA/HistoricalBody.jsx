@@ -16,12 +16,11 @@ const HistoricalBody = () => {
   const links = eightHours.map((element) => (
     <Link
       key={nanoid()}
-      to="/relativemodal"
+      to="/relativemodal/historical"
       state={{
         previousLocation: location,
         airData: element,
         nameLocale: airData?.locationData?.name || 'No location',
-        title: 'Historical',
       }}
     >
       <DataObjComponent

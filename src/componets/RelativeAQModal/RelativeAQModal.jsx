@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { FaChevronLeft, FaHome } from 'react-icons/fa';
 import LocationComp from 'componets/CommomComponents/LocationComp';
@@ -10,7 +10,8 @@ import 'styles/RelativeModal.css';
 
 const RelativeAQModal = () => {
   const location = useLocation();
-  const { airData, title, nameLocale } = location?.state || '';
+  const { title } = useParams();
+  const { airData, nameLocale } = location?.state || '';
   const { aqi } = airData?.main || { aqi: -1 };
   const {
     co, no, no2, o3,

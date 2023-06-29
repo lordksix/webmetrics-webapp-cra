@@ -102,6 +102,11 @@ const HomeBody = () => {
         </div>
       </div>
       {navdiv}
+      <div className="catItem">
+        <p>
+          Soon Weather Forecast
+        </p>
+      </div>
     </div>
   );
 };

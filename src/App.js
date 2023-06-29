@@ -27,7 +27,7 @@ function App() {
       {previousLocation && (
         <Routes>
           <Route path="/modal" element={<MenuModal />} />
-          <Route path="/relativemodal" element={<RelativeAQModal />} />
+          <Route path="/relativemodal/:title" element={<RelativeAQModal />} />
         </Routes>
       )}
     </div>

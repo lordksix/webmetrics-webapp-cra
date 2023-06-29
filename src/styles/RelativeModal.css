@@ -3,13 +3,13 @@
   left: 0;
   top: 0;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   font-size: 10px;
   background-color: black;
   color: var(--font-color);
   display: flex;
   flex-flow: column;
-  overflow-y: scroll;
+  overflow-y: scroll !important;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
@@ -21,7 +21,7 @@
 
 .forecastModal {
   width: 100vw;
-  min-height: 100vh;
+  height: 100%;
   color: var(--font-color);
   display: flex;
   flex-flow: column;
@@ -44,7 +44,7 @@
 
 .forecastModal .secTitle .airQlyWrapper,
 .forecastModal .secTitle .locationWrapper {
-  height: 15vh;
+  height: 20vh;
 }
 
 .forecastModal .secBody {
@@ -52,10 +52,18 @@
 }
 
 .forecastModal .secBody .dataWrapper {
-  height: 8.75vh;
+  height: 15vh;
   flex-flow: row;
   padding: 0 10vw;
   justify-content: space-between;
+}
+
+.forecastModal .secBody .dataWrapper .dataWrapperLeft {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
 }
 
 @media only screen and (min-width: 294px) {

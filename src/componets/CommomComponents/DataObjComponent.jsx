@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 import AirQuality from './AirQuality';
 
 const DataObjComponent = (props) => {
@@ -6,6 +7,7 @@ const DataObjComponent = (props) => {
 
   return (
     <div className="dataWrapper">
+      <BsFillArrowRightCircleFill className="rightConner" />
       <AirQuality aqi={aqi} />
       <p>
         Date time:&nbsp;

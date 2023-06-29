@@ -8,6 +8,7 @@
   display: flex;
   flex-flow: column;
   justify-content: center;
+  font-size: 10px;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
@@ -194,6 +195,10 @@
 }
 
 @media only screen and (min-width: 294px) {
+  .modalMenuWrapper {
+    font-size: 12px;
+  }
+
   .modalTitle .headerLogo img {
     display: inline-block;
   }
@@ -233,7 +238,17 @@
   }
 }
 
+@media only screen and (min-width: 520px) {
+  .modalMenuWrapper {
+    font-size: 14px;
+  }
+}
+
 @media only screen and (min-width: 768px) {
+  .modalMenuWrapper {
+    font-size: 16px;
+  }
+
   .sqMenu {
     height: 20vh;
   }

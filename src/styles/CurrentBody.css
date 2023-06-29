@@ -46,6 +46,7 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 10%;
 }
 
 .secBody .dataWrapper:nth-child(1),
@@ -64,4 +65,12 @@
 
 .secBody .dataWrapper:hover {
   background-color: var(--font-purpleSelf);
+}
+
+.secBody .dataWrapper .dataWrapperLeft {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
 }

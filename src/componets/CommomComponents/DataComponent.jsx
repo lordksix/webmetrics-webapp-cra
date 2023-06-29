@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { WiCloudy } from 'react-icons/wi';
 
 const DataComponent = (props) => {
   const { dataName, dataInfo } = props;
@@ -6,7 +7,16 @@ const DataComponent = (props) => {
 
   return (
     <div className="dataWrapper">
-      <p className="dataTitle">{dataName}</p>
+      <div className="dataWrapperLeft">
+        <WiCloudy
+          style={{
+            height: '60%',
+            width: 'auto',
+            color: 'white',
+          }}
+        />
+        <p className="dataTitle">{dataName}</p>
+      </div>
       <p className="dataInfo">{result}</p>
     </div>
   );
