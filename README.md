@@ -57,9 +57,11 @@
 
 - **Setup React App**
 - **Implement SPA using React Router**
-- **Connect to SpaceX API**
-- **Implement mission, profile, dragons and rocket pages**
-- **Add reserve or join to all option**
+- **Connect to Open Weather Map API**
+- **Connect to Map Box API**
+- **Implement current, forecast and historical air quality pages**
+- **Implement forecast and historical air quality detailed pages**
+- **Implement menu modal**
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
@@ -181,7 +183,8 @@ Go to [🚀 Live Demo](https://webmetrics-webapp-cra.vercel.app/) to check it ou
 ## 🔭 Future Features <a name="future-features"></a>
 
 Future changes:
-- Add extra interactivity in profile page.
+- Add tests.
+- Add Weather Forecast.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -201,7 +204,7 @@ If you like this project, I encourage you to clone, fork and contribute. Our com
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for the API and Usman Suleiman Babakolo for the template for this project.
+I would like to thank [Open Weather](https://openweathermap.org/api/air-pollution) and [Map Box](https://www.mapbox.com/) for the API and [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) for the design idea behind for this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
