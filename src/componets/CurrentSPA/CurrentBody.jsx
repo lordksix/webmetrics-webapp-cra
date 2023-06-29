@@ -33,7 +33,7 @@ const CurrentBody = () => {
       </div>
       <div className="sepSec">
         <p>
-          POLLUTANT CONCENTRATION IN UG/M3
+          CURRENT POLLUTANT CONCENTRATION IN UG/M3
         </p>
       </div>
       <div className="secBody">
