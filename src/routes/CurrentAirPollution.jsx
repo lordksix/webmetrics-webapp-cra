@@ -1,10 +1,9 @@
-import React from 'react';
+import CurrentBody from 'componets/CurrentSPA/CurrentBody';
 
-const CurrentAirPollution = () => {
-  const data = 'data';
-  return (
-    <div>{data}</div>
-  );
-};
+const CurrentAirPollution = () => (
+  <main className="appBody">
+    <CurrentBody />
+  </main>
+);
 
 export default CurrentAirPollution;

@@ -1,0 +1,115 @@
+.currentAQI {
+  width: 100%;
+  font-size: 10px;
+}
+
+.secTitle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.secTitle .airQlyWrapper,
+.secTitle .locationWrapper {
+  height: 25vh;
+  background-color: var(--bg-container-light);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.secTitle .locationWrapper p {
+  width: 90%;
+}
+
+.secTitle > *:hover {
+  background-color: var(--font-purpleSelf);
+}
+
+.sepSec {
+  min-width: 19px;
+  background-color: var(--bg-container-sep);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2vh 5vw;
+}
+
+.forecastBody {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.forecastBody a {
+  height: 25vh;
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+.forecastBody .dataWrapper {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 12px;
+}
+
+.rightConner {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.forecastBody a:nth-child(1),
+.forecastBody a:nth-child(4),
+.forecastBody a:nth-child(5),
+.forecastBody a:nth-child(8) {
+  background-color: var(--bg-container-darker);
+}
+
+.forecastBody a:nth-child(2),
+.forecastBody a:nth-child(3),
+.forecastBody a:nth-child(6),
+.forecastBody a:nth-child(7) {
+  background-color: var(--bg-container-darkest);
+}
+
+.forecastBody .dataWrapper:hover {
+  background-color: var(--font-purpleSelf);
+}
+
+@media only screen and (min-width: 294px) {
+  .currentAQI {
+    font-size: 12px;
+  }
+
+  .rightConner {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media only screen and (min-width: 520px) {
+  .currentAQI {
+    font-size: 14px;
+  }
+
+  .rightConner {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .currentAQI {
+    font-size: 16px;
+  }
+
+  .rightConner {
+    top: 22px;
+    right: 22px;
+  }
+}

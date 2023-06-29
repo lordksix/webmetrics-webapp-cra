@@ -3,12 +3,14 @@
   justify-content: space-between;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 9%;
-  padding-right: 9%;
+  padding-left: 3%;
+  padding-right: 3%;
   gap: 10px;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
   background-color: var(--bg-container);
   height: 68px;
+  width: 100%;
+  text-align: center;
 }
 
 .headerLogo {
@@ -45,6 +47,10 @@
   text-decoration: none;
   color: var(--font-color);
   font-weight: bold;
+}
+
+.full-navbar li a:hover {
+  color: var(--font-purpleSelf);
 }
 
 .active {
@@ -98,6 +104,10 @@
     display: none;
   }
 
+  header .placesAutocomplete__inputWrap {
+    flex-flow: row;
+  }
+
   header .flex-align {
     font-size: 12px;
     padding: 6px 6px;
@@ -127,12 +137,6 @@
   .full-navbar li:last-child {
     padding-left: 5px;
     border-left: 2px solid rgba(0, 0, 0, 0.5);
-  }
-
-  ul.nav-list li a {
-    text-decoration: none;
-    color: var(--font-color);
-    font-size: 0.8rem;
   }
 }
 

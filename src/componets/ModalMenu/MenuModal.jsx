@@ -7,9 +7,9 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { GiCancel } from 'react-icons/gi';
 import { FaSearchLocation } from 'react-icons/fa';
 import logo from 'images/lordksix-logos_transparent.png';
-import SearchBox from './SearchBox';
+import SearchBox from 'componets/CommomComponents/SearchBox';
 import 'styles/MenuModal.css';
-import LocationBtn from './LocationBtn';
+import LocationBtn from 'componets/CommomComponents/LocationBtn';
 
 const MenuModal = () => {
   const modalRef = useRef();
@@ -70,6 +70,12 @@ const MenuModal = () => {
 
   const loadMessage = <span>Loading</span>;
   const errorMessage = <span className="error">Error</span>;
+  const currLocation = (
+    <span>
+      Information about:&nbsp;
+      {airData?.locationData?.name || ''}
+    </span>
+  );
 
   return (
     <section className="modalMenuWrapper" ref={modalRef}>
@@ -98,9 +104,10 @@ const MenuModal = () => {
               {navbar}
             </ul>
           </nav>
-          <div className={`modalMsg${airData.isLoading || airData.error ? ' modalMsgActiv' : ''}`}>
+          <div className={`modalMsg${airData.isLoading || airData.error || (!airData.isLoading && !airData.error && airData.current.length > 0) ? ' modalMsgActiv' : ''}`}>
             {airData.isLoading && loadMessage}
             {airData.error && errorMessage}
+            {!airData.error && !airData.isLoading && airData.current.length > 0 && currLocation}
           </div>
         </div>
       </div>

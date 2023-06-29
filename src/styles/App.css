@@ -1,33 +1,31 @@
-:root {
-  --bg-containerSelf: aquamarine;
-  --bg-container: #4369b2;
-  --font-colorSelf: #007bff;
-  --font-color: white;
-  --font-purpleSelf: #3a0775;
-}
-
 .App {
   text-align: center;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
-.profileCol {
-  margin: auto;
-  width: 80%;
+.App:-webkit-scrollbar {
+  display: none;
 }
 
-.left {
-  text-align: left;
+.appBody {
+  min-height: calc(100vh - var(--bodyheight));
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 68px;
+}
+
+.appBody h2 {
+  margin-top: 2vh;
 }
 
 .error {
   color: red;
 }
 
-@media only  screen and (min-width: 600px) {
-  .profilePage {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    max-width: 800px;
-    justify-content: center;
+@media only  screen and (min-width: 768px) {
+  .appBody h2 {
+    margin-top: 3vh;
   }
 }

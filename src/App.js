@@ -5,8 +5,9 @@ import NotMatch from 'routes/NotMatch';
 import CurrentAirPollution from 'routes/CurrentAirPollution';
 import ForecastAirPollution from 'routes/ForecastAirPollution';
 import HistoricalAirPollution from 'routes/HistoricalAirPollution';
-import Layout from 'componets/Layout';
-import MenuModal from 'componets/MenuModal';
+import Layout from 'componets/CommomComponents/Layout';
+import MenuModal from 'componets/ModalMenu/MenuModal';
+import RelativeAQModal from 'componets/RelativeAQModal/RelativeAQModal';
 
 function App() {
   const location = useLocation();
@@ -26,6 +27,7 @@ function App() {
       {previousLocation && (
         <Routes>
           <Route path="/modal" element={<MenuModal />} />
+          <Route path="/relativemodal/:title" element={<RelativeAQModal />} />
         </Routes>
       )}
     </div>

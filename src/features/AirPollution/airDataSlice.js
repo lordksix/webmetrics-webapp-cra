@@ -29,9 +29,9 @@ const initialState = {
 };
 
 const ENDPOINTS = [
-  'http://api.openweathermap.org/data/2.5/air_pollution?',
-  'http://api.openweathermap.org/data/2.5/air_pollution/forecast?',
-  'http://api.openweathermap.org/data/2.5/air_pollution/history?',
+  'https://api.openweathermap.org/data/2.5/air_pollution?',
+  'https://api.openweathermap.org/data/2.5/air_pollution/forecast?',
+  'https://api.openweathermap.org/data/2.5/air_pollution/history?',
 ];
 
 export const getAirData = createAsyncThunk('airdata/getAirData', async (gps, thunkAPI) => {

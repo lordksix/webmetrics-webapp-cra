@@ -1,19 +1,12 @@
-import { nanoid } from '@reduxjs/toolkit';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import logo from 'images/lordksix-logos_transparent.png';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaSearchLocation } from 'react-icons/fa';
-import SearchBox from './SearchBox';
+import SearchBox from 'componets/CommomComponents/SearchBox';
 import 'styles/Header.css';
-import LocationBtn from './LocationBtn';
-
-const links = [
-  { path: '/current', text: 'Current' },
-  { path: '/forecast', text: 'Forecast' },
-  { path: '/historical', text: 'Historical' },
-  { path: '/', text: 'Home' },
-];
+import LocationBtn from 'componets/CommomComponents/LocationBtn';
+import NavBar from './NavBar';
 
 const Header = () => {
   const location = useLocation();
@@ -23,23 +16,10 @@ const Header = () => {
     <Link
       to="/modal"
       state={{ previousLocation: location }}
-      className="flex-align"
+      className="flex-align navbarBtn"
     >
       <GiHamburgerMenu />
     </Link>
-  );
-
-  const navbar = (
-    links.map((link) => (
-      <li key={nanoid()}>
-        <NavLink
-          to={link.path}
-          className={({ isActive }) => (isActive ? 'active' : undefined)}
-        >
-          {link.text}
-        </NavLink>
-      </li>
-    ))
   );
 
   const searchBtn = (
@@ -68,7 +48,7 @@ const Header = () => {
         <LocationBtn />
         <nav aria-label="main">
           <ul className="full-navbar">
-            {navbar}
+            <NavBar />
           </ul>
         </nav>
       </div>
