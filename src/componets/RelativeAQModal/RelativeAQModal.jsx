@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaChevronLeft } from 'react-icons/fa';
@@ -9,12 +8,11 @@ import AirQuality from 'componets/CommomComponents/AirQuality';
 import DataComponent from 'componets/CommomComponents/DataComponent';
 import dataString from 'lib/dtSting';
 
-const RelativeAQModal = (props) => {
-  const {
-    nameLocale, airData, title,
-  } = props;
-
-  const { aqi } = airData?.main || { aqi: -1 };
+const RelativeAQModal = () => {
+  const location = useLocation();
+  console.log(location);
+  const { airData } = location?.state;
+  const { aqi, title, nameLocale } = airData?.main || { aqi: -1 };
   const {
     co, no, no2, o3,
     so2, pm10, nh3,
@@ -30,7 +28,6 @@ const RelativeAQModal = (props) => {
   const pm25 = airData?.components?.pm2_5 || -1;
   const dt = dataString(airData?.dt || -1);
   const modalRef = useRef();
-  const location = useLocation();
 
   useEffect(() => {
     const observerRefValue = modalRef.current;
@@ -99,27 +96,6 @@ const RelativeAQModal = (props) => {
       </div>
     </section>
   );
-};
-
-RelativeAQModal.propTypes = {
-  nameLocale: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  airData: PropTypes.shape({
-    dt: PropTypes.string.isRequired,
-    main: PropTypes.shape({
-      aqi: PropTypes.number.isRequired,
-    }),
-    components: PropTypes.shape({
-      co: PropTypes.number.isRequired,
-      nh3: PropTypes.number.isRequired,
-      no: PropTypes.number.isRequired,
-      no2: PropTypes.number.isRequired,
-      o3: PropTypes.number.isRequired,
-      so2: PropTypes.number.isRequired,
-      pm2_5: PropTypes.number.isRequired,
-      pm10: PropTypes.number.isRequired,
-    }),
-  }).isRequired,
 };
 
 export default RelativeAQModal;
