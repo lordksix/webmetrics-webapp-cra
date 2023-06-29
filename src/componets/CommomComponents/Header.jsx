@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import logo from 'images/lordksix-logos_transparent.png';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { FaSearchLocation } from 'react-icons/fa';
+import { FaSearchLocation, FaChevronLeft } from 'react-icons/fa';
 import SearchBox from 'componets/CommomComponents/SearchBox';
 import 'styles/Header.css';
 import LocationBtn from 'componets/CommomComponents/LocationBtn';
@@ -11,6 +11,18 @@ import NavBar from './NavBar';
 const Header = () => {
   const location = useLocation();
   const [searchLocation, setSearchLocation] = useState(false);
+  console.log(location.pathname === '/');
+
+  const returnBtn = (
+    <Link
+      to="/"
+      className="navbarBtn"
+    >
+      <button type="button" className="flex-align">
+        <FaChevronLeft />
+      </button>
+    </Link>
+  );
 
   const mobileBtn = (
     <Link
@@ -31,6 +43,7 @@ const Header = () => {
   return (
     <header className="stickyHeader">
       <div className="headerLogo">
+        {(location.pathname !== '/') && returnBtn}
         <img
           src={logo}
           alt="Air Quality App"

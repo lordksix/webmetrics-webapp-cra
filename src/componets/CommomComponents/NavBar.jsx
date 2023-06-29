@@ -7,7 +7,6 @@ const NavBar = () => {
     { path: '/current', text: 'Current' },
     { path: '/forecast', text: 'Forecast' },
     { path: '/historical', text: 'Historical' },
-    { path: '/', text: 'Home' },
   ];
 
   const navbar = (
