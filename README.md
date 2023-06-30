@@ -1,6 +1,8 @@
 <a name="readme-top"></a>
 
 <div align="center">
+    <img src="src/images/lordksix-logos_transparent.png" alt="logo" width="240"  height="auto" margin="auto"/>
+    <br/>
   <h3><b>lordksix's Air Quality App</b></h3>
 
 </div>
