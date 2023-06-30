@@ -51,6 +51,7 @@ const HomeBody = () => {
               />
               <div>
                 {link.text}
+                <br />
                 Air Quality Index:&nbsp;
                 {qualityMsg(airData?.current[0]?.main?.aqi)}
                 <br />
