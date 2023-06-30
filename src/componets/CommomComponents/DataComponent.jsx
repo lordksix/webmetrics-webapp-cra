@@ -6,7 +6,7 @@ const DataComponent = (props) => {
   const result = dataInfo < 0 ? 'No data' : dataInfo;
 
   return (
-    <div className="dataWrapper">
+    <div className="dataWrapper" title="concentration">
       <div className="dataWrapperLeft">
         <WiCloudy
           style={{
@@ -24,7 +24,7 @@ const DataComponent = (props) => {
 
 DataComponent.propTypes = {
   dataName: PropTypes.string.isRequired,
-  dataInfo: PropTypes.string.isRequired,
+  dataInfo: PropTypes.number.isRequired,
 };
 
 export default DataComponent;

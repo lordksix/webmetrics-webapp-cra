@@ -94,6 +94,10 @@
     display: none;
   }
 
+  .stickyHeader .headerLogo .navbarBtn {
+    display: flex;
+  }
+
   .full-header {
     display: flex;
     align-items: center;
@@ -132,11 +136,6 @@
     list-style: none;
     align-items: center;
     gap: 5px;
-  }
-
-  .full-navbar li:last-child {
-    padding-left: 5px;
-    border-left: 2px solid rgba(0, 0, 0, 0.5);
   }
 }
 

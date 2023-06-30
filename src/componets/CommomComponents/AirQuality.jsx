@@ -25,7 +25,7 @@ const AirQuality = (props) => {
       msgColor = 'var(--bg-container-pink)';
       break;
     default:
-      msgColor = 'var(--font-color)';
+      msgColor = 'black';
       break;
   }
 

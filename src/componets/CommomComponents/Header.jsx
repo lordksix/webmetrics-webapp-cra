@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import logo from 'images/lordksix-logos_transparent.png';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { FaSearchLocation } from 'react-icons/fa';
+import { FaSearchLocation, FaChevronLeft } from 'react-icons/fa';
 import SearchBox from 'componets/CommomComponents/SearchBox';
 import 'styles/Header.css';
 import LocationBtn from 'componets/CommomComponents/LocationBtn';
@@ -12,11 +12,24 @@ const Header = () => {
   const location = useLocation();
   const [searchLocation, setSearchLocation] = useState(false);
 
+  const returnBtn = (
+    <Link
+      to="/"
+      className="navbarBtn"
+      title="home"
+    >
+      <button type="button" className="flex-align">
+        <FaChevronLeft />
+      </button>
+    </Link>
+  );
+
   const mobileBtn = (
     <Link
       to="/modal"
       state={{ previousLocation: location }}
       className="flex-align navbarBtn"
+      title="modal"
     >
       <GiHamburgerMenu />
     </Link>
@@ -31,6 +44,7 @@ const Header = () => {
   return (
     <header className="stickyHeader">
       <div className="headerLogo">
+        {(location.pathname !== '/') && returnBtn}
         <img
           src={logo}
           alt="Air Quality App"
@@ -45,7 +59,7 @@ const Header = () => {
       {mobileBtn}
       <div className="full-header">
         {searchLocation ? <SearchBox handleSearchBtn={setSearchLocation} /> : searchBtn}
-        <LocationBtn />
+        <LocationBtn descrip="Get Location: " />
         <nav aria-label="main">
           <ul className="full-navbar">
             <NavBar />

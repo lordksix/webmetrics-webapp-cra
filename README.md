@@ -30,7 +30,7 @@
 
 # 📖 [lordksix's Air Quality App] <a name="about-project"></a>
 
-**lordksix's Air Quality App** is a web application where the user can check a list of metrics (air pollution) using React and Redux and REST API services.
+**lordksix's Air Quality App** is a web application where the user can check a list of metrics (air pollution) using React and Redux and REST API services. [check out this loom recording a video demostration and description](https://www.loom.com/share/deb97341ffde4f24a212e1250a9ed181).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -62,6 +62,8 @@
 - **Implement current, forecast and historical air quality pages**
 - **Implement forecast and historical air quality detailed pages**
 - **Implement menu modal**
+- **Add integration tests**
+- **Add pure function tests**
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
@@ -183,7 +185,7 @@ Go to [🚀 Live Demo](https://webmetrics-webapp-cra.vercel.app/) to check it ou
 ## 🔭 Future Features <a name="future-features"></a>
 
 Future changes:
-- Add tests.
+- Add refresh data button.
 - Add Weather Forecast.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
