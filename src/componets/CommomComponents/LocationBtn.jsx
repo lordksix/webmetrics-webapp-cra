@@ -3,8 +3,10 @@ import { fetchPlace } from 'lib/fetchMapboxAPI';
 import { useState } from 'react';
 import { FaLocationArrow } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 
-const LocationBtn = () => {
+const LocationBtn = (props) => {
+  const { descrip } = props;
   const dispatch = useDispatch();
   const [currentLocationErr, setCurrentLocationErr] = useState(false);
 
@@ -39,8 +41,9 @@ const LocationBtn = () => {
       type="button"
       onClick={() => handleLocation()}
       className="locationBtn"
+      title="getlocation"
     >
-      Current Location:&nbsp;
+      {descrip}
       <FaLocationArrow />
       {currentLocationErr && errorSpan}
     </button>
@@ -50,6 +53,10 @@ const LocationBtn = () => {
       {locationBtn}
     </>
   );
+};
+
+LocationBtn.propTypes = {
+  descrip: PropTypes.string.isRequired,
 };
 
 export default LocationBtn;

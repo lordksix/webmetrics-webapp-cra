@@ -6,7 +6,7 @@ const DataObjComponent = (props) => {
   const { aqi, dateLocale } = props;
 
   return (
-    <div className="dataWrapper">
+    <div className="dataWrapper" title="snapshot">
       <BsFillArrowRightCircleFill className="rightConner" />
       <AirQuality aqi={aqi} />
       <p>

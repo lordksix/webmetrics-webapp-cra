@@ -11,12 +11,12 @@ import NavBar from './NavBar';
 const Header = () => {
   const location = useLocation();
   const [searchLocation, setSearchLocation] = useState(false);
-  console.log(location.pathname === '/');
 
   const returnBtn = (
     <Link
       to="/"
       className="navbarBtn"
+      title="home"
     >
       <button type="button" className="flex-align">
         <FaChevronLeft />
@@ -29,6 +29,7 @@ const Header = () => {
       to="/modal"
       state={{ previousLocation: location }}
       className="flex-align navbarBtn"
+      title="modal"
     >
       <GiHamburgerMenu />
     </Link>
@@ -58,7 +59,7 @@ const Header = () => {
       {mobileBtn}
       <div className="full-header">
         {searchLocation ? <SearchBox handleSearchBtn={setSearchLocation} /> : searchBtn}
-        <LocationBtn />
+        <LocationBtn descrip="Get Location: " />
         <nav aria-label="main">
           <ul className="full-navbar">
             <NavBar />

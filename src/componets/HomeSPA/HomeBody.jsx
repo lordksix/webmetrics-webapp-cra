@@ -36,7 +36,7 @@ const HomeBody = () => {
     links.map((link, i) => {
       if (i === 0) {
         return (
-          <div key={nanoid()} className="catItem">
+          <div key={nanoid()} className="catItem" title={link.path}>
             <NavLink
               to={link.path}
               className={({ isActive }) => (isActive ? 'active' : undefined)}
@@ -50,21 +50,18 @@ const HomeBody = () => {
                 }}
               />
               <div>
-                <p>{link.text}</p>
-                <p>
-                  Air Quality Index:&nbsp;
-                  {qualityMsg(airData?.current[0]?.main?.aqi)}
-                </p>
-                <p>
-                  Click for more information
-                </p>
+                {link.text}
+                Air Quality Index:&nbsp;
+                {qualityMsg(airData?.current[0]?.main?.aqi)}
+                <br />
+                Click for more information
               </div>
             </NavLink>
           </div>
         );
       }
       return (
-        <div key={nanoid()} className="catItem">
+        <div key={nanoid()} className="catItem" title={link.path}>
           <NavLink
             to={link.path}
             className={({ isActive }) => (isActive ? 'active' : undefined)}
@@ -78,10 +75,9 @@ const HomeBody = () => {
               }}
             />
             <div>
-              <p>{link.text}</p>
-              <p>
-                Click for more information
-              </p>
+              {link.text}
+              <br />
+              Click for more information
             </div>
           </NavLink>
         </div>
@@ -93,7 +89,7 @@ const HomeBody = () => {
     <div className="HomeSec">
       <SearchBox handleSearchBtn={() => false} />
       <div className="locationSec">
-        <LocationBtn />
+        <LocationBtn descrip="Get Current Location:" />
         <div className={`statusMsg${airData.isLoading || airData.error ? ' modalMsgActiv' : ''}`}>
           {airData.isLoading && loadMessage}
           {airData.error && errorMessage}
