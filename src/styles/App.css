@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.App:-webkit-scrollbar {
+  display: none;
+}
+
+.appBody {
+  min-height: calc(100vh - var(--bodyheight));
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 68px;
+}
+
+.appBody h2 {
+  margin-top: 2vh;
+}
+
+.error {
+  color: red;
+}
+
+@media only  screen and (min-width: 768px) {
+  .appBody h2 {
+    margin-top: 3vh;
+  }
+}

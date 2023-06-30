@@ -1,0 +1,71 @@
+:root {
+  --bg-containerSelf: aquamarine;
+  --bg-container: #4369b2;
+  --bg-container-green: #00b64f;
+  --bg-container-green-light: #6bc900;
+  --bg-container-yellow: yellow;
+  --bg-container-orange: #ff5b2e;
+  --bg-container-pink: #e42a72;
+  --bg-container-light: #5789e6;
+  --bg-container-darker: #4166ac;
+  --bg-container-darkest: #3f63a6;
+  --bg-container-sep: #35548c;
+  --font-colorSelf: #007bff;
+  --font-color: white;
+  --font-purpleSelf: #3a0775;
+  --bodyheight: 68px;
+}
+
+@font-face {
+  font-family: 'GillSans';
+  src:
+    local('GillSans'),
+    url('fonts/GillSans.otf') format('otf'),
+    url('fonts/GillSansBold.otf') format('otf'),
+    url('fonts/GillSansBoldItalic.otf') format('otf'),
+    url('fonts/GillSansCondensed.otf') format('otf'),
+    url('fonts/GillSansCondensedBold.otf') format('otf'),
+    url('fonts/GillSansHeavy.otf') format('otf'),
+    url('fonts/GillSansHeavyItalic.otf') format('otf'),
+    url('fonts/GillSansItalic.otf') format('otf'),
+    url('fonts/GillSansLight.otf') format('otf'),
+    url('fonts/GillSansLightItalic.otf') format('otf'),
+    url('fonts/GillSansMedium.otf') format('otf'),
+    url('fonts/GillSansMediumItalic.otf') format('otf');
+}
+
+body {
+  margin: 0;
+  font-family: GillSans, 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+  color: var(--font-color);
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+code {
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Courier New',
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
