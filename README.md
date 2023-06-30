@@ -62,6 +62,8 @@
 - **Implement current, forecast and historical air quality pages**
 - **Implement forecast and historical air quality detailed pages**
 - **Implement menu modal**
+- **Add integration tests**
+- **Add pure function tests**
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
