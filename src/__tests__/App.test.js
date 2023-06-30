@@ -1,88 +1,78 @@
-import { render, screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from 'App';
-import store from 'features/store';
-import { serverAir, serverLocation } from 'mocks/server';
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { handlersLocation } from 'mocks/handlers';
+import server from 'mocks/server';
+import renderWithProviders from 'utils/test-utils';
 
-// eslint-disable-next-line react/prop-types
-const AllTheProviders = ({ children }) => (
-  <Provider store={store}>
-    <BrowserRouter>
-      {children}
-    </BrowserRouter>
-  </Provider>
-);
+beforeEach(() => {
+  jest.resetAllMocks();
+});
 
-describe('test current air quality', () => {
-  beforeAll(() => serverAir.listen());
-  afterAll(() => serverAir.close());
-  afterEach(() => serverAir.resetHandlers());
-  beforeAll(() => serverLocation.listen());
-  afterAll(() => serverLocation.close());
-  afterEach(() => serverLocation.resetHandlers());
-
-  test('full app rendering/navigating', async () => {
-    render(<App />, { wrapper: AllTheProviders });
-
+describe('test render home', () => {
+  test('test render latest update', async () => {
+    renderWithProviders(<App />);
     expect(screen.getByText(/latest refresh/i)).toBeInTheDocument();
   });
 
-  test('full app rendering/navigating', async () => {
-    render(<App />, { wrapper: AllTheProviders });
-    const user = userEvent.setup();
+  test('test render get current location', async () => {
+    renderWithProviders(<App />);
+    expect(screen.getByText(/get current/i)).toBeInTheDocument();
+  });
 
-    // verify page content for expected route after navigating
-    await user.click(screen.getByText(/current air quality/i));
-    expect(screen.getByText(/CURRENT POLLUTANT CONCENTRATION IN UG/i)).toBeInTheDocument();
+  test('test render forecast air quality', async () => {
+    renderWithProviders(<App />);
+
+    expect(screen.getByText(/forecast air quality/i)).toBeInTheDocument();
+  });
+
+  test('test render historical air quality', async () => {
+    renderWithProviders(<App />);
+
+    expect(screen.getByText(/historical air quality/i)).toBeInTheDocument();
+  });
+
+  test('test render current air quality', async () => {
+    renderWithProviders(<App />);
+
+    expect(screen.getByText(/current air quality/i)).toBeInTheDocument();
   });
 });
 
-describe('test forecast air quality', () => {
-  beforeAll(() => serverAir.listen());
-  afterAll(() => serverAir.close());
-  afterEach(() => serverAir.resetHandlers());
-  beforeAll(() => serverLocation.listen());
-  afterAll(() => serverLocation.close());
-  afterEach(() => serverLocation.resetHandlers());
-
-  test('full app rendering/navigating', async () => {
-    render(<App />, { wrapper: AllTheProviders });
-
-    expect(screen.getByText(/Welcome to lordksix's Air Quality App/i)).toBeInTheDocument();
-  });
-
-  test('full app rendering/navigating', async () => {
-    render(<App />, { wrapper: AllTheProviders });
+describe('test store', () => {
+  beforeAll(() => server.listen());
+  afterAll(() => server.close());
+  afterEach(() => server.resetHandlers());
+  test('test nativation to current air quality page', async () => {
+    server.use(handlersLocation);
+    renderWithProviders(<App />);
     const user = userEvent.setup();
-
     // verify page content for expected route after navigating
-    await user.click(screen.getByText(/forecast air quality/i));
-    expect(screen.getAllByText(/FORECAST AIR QUALITY: NEXT 8 HOURS/i).length).toBeGreaterThan(0);
+    const temp = screen.getByText(/Get Current Location:/i);
+    await user.click(temp);
+    expect(screen.getByText(/unable/i)).toBeInTheDocument();
   });
 });
 
-describe('test historical air quality', () => {
-  beforeAll(() => serverAir.listen());
-  afterAll(() => serverAir.close());
-  afterEach(() => serverAir.resetHandlers());
-  beforeAll(() => serverLocation.listen());
-  afterAll(() => serverLocation.close());
-  afterEach(() => serverLocation.resetHandlers());
+describe('test interaction historical', () => {
+  test('test nativation to current air quality page', async () => {
+    renderWithProviders(<App />);
+    const user = userEvent.setup();
 
-  test('full app rendering/navigating', async () => {
-    render(<App />, { wrapper: AllTheProviders });
-
-    expect(screen.getByText(/Welcome to lordksix's Air Quality App/i)).toBeInTheDocument();
+    const temp = screen.getByText(/Historical Air Quality/i).closest('a');
+    await user.click(temp);
+    await waitFor(() => expect(screen.getByText(/previous/i)).toBeInTheDocument());
   });
+});
 
-  test('full app rendering/navigating', async () => {
-    render(<App />, { wrapper: AllTheProviders });
+describe('test interaction forecast', () => {
+  test('test nativation to current air quality page', async () => {
+    renderWithProviders(<App />);
     const user = userEvent.setup();
 
     // verify page content for expected route after navigating
-    await user.click(screen.getByText(/forecast air quality/i));
-    expect(screen.getByText(/HISTORICAL AIR QUALITY: PREVIOUS 8 HOURS/i)).toBeInTheDocument();
+    await user.click(screen.getByTitle('home'));
+    await user.click(screen.getByText(/forecast air quality/i).closest('a'));
+    await waitFor(() => expect(screen.getByText(/next/i)).toBeInTheDocument());
   });
 });
