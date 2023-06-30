@@ -73,27 +73,21 @@ const data8 = {
   },
 };
 
-const location = {
+export const location = {
   name: 'Test City, Test State, Test Country',
   center: [50, 50],
 };
 
-const current = [data0];
-const forecast = [data1, data2, data3, data4, data5, data6, data7, data8];
-const historical = [data1, data2, data3, data4, data5, data6, data7, data8];
+export const current = [data0];
+export const forecast = [data1, data2, data3, data4, data5, data6, data7, data8];
+export const historical = [data1, data2, data3, data4, data5, data6, data7, data8];
 
-export const handlersAir = [
-  rest.get('https://api.openweathermap.org/data/2.5/air_pollution', (req, res, ctx) => res(
-    ctx.json(current),
-  )),
-  rest.get('https://api.openweathermap.org/data/2.5/air_pollution/forecast', (req, res, ctx) => res(
-    ctx.json(forecast),
-  )),
-  rest.get('https://api.openweathermap.org/data/2.5/air_pollution/history', (req, res, ctx) => res(
-    ctx.json(historical),
-  )),
-];
+export const handlersAir = rest.get('https://api.openweathermap.org/data/2.5/air_pollution', (req, res, ctx) => res(
+  ctx.json([current, forecast, historical]),
+));
 
-export const handlersLocation = rest.get('https://api.mapbox.com/geocoding/v5/mapbox.places/', (req, res, ctx) => res(
+export const handlersLocation = rest.get('/geocodingAPI', (req, res, ctx) => res(
   ctx.json(location),
 ));
+
+export const handlers = [handlersLocation, handlersAir];
